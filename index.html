@@ -1,115 +1,233 @@
-l<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Santé pour Tous | Bien-être & Produits Bio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Santé pour Tous</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
-}
-
 body{
-    background:#f5f7f6;
-    color:#222;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f8f9f8;
 }
 
+/* HEADER */
 header{
-    background:linear-gradient(135deg,#0b3d2e,#145c43);
+    background:#0b3d2e;
     color:white;
-    padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:15px 40px;
 }
 
-header h1{
-    font-size:24px;
-    font-weight:700;
+header img{
+    height:60px;
 }
 
 nav a{
     color:white;
     text-decoration:none;
     margin-left:25px;
-    font-weight:500;
-    transition:0.3s;
+    font-weight:bold;
 }
 
 nav a:hover{
-    color:#d4af37;
-}
-    .slider {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
+    color:#cce3d8;
 }
 
-.slide {
-    width: 100%;
-    display: none;
-}
-
-.slide.active {
-    display: block;
-}
-    
-
+/* HERO */
 .hero{
-    height:90vh;
-    background:linear-gradient(rgba(11,61,46,0.8),rgba(11,61,46,0.8)),
-    url('https://images.unsplash.com/photo-1580281657527-47f249e5a4a0');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    background:#e6f2ed;
     text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    color:#0b3d2e;
+}
+
+/* CAROUSEL */
+.carousel-section{
+    padding:40px 0;
+    background:#ffffff;
+}
+
+.carousel{
+    overflow:hidden;
+    width:100%;
+}
+
+.carousel-track{
+    display:flex;
+    width:calc(250px * 8);
+    animation:scroll 30s linear infinite;
+}
+
+.carousel-track img{
+    width:250px;
+    height:180px;
+    object-fit:cover;
+    margin-right:20px;
+    border-radius:12px;
+}
+
+@keyframes scroll{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-50%); }
+}
+
+/* SECTION PRODUITS */
+.section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.products{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.product{
+    background:white;
+    padding:20px;
+    width:260px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+button{
+    margin-top:10px;
+    padding:10px 15px;
+    background:#0b3d2e;
     color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#145c46;
+}
+
+/* A PROPOS */
+#apropos{
+    background:#f0f4f2;
+}
+
+/* FOOTER */
+footer{
+    background:#0b3d2e;
+    color:white;
+    text-align:center;
     padding:20px;
 }
+</style>
+</head>
 
-.hero h2{
-    font-size:42px;
-    margin-bottom:20px;
+<body>
+
+<header>
+    <img src="images/logo.png" alt="Logo">
+    <nav>
+        <a href="#accueil">ACCUEIL</a>
+        <a href="#produits">BOUTIQUE</a>
+        <a href="#apropos">À PROPOS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+</header>
+
+<section id="accueil" class="hero">
+    <h1>Bienvenue chez Santé pour Tous</h1>
+    <p>Votre partenaire pour le bien-être naturel</p>
+</section>
+
+<!-- CAROUSEL -->
+<section class="carousel-section">
+    <div class="carousel">
+        <div class="carousel-track">
+            <img src="images/produit1.jpg">
+            <img src="images/produit2.jpg">
+            <img src="images/produit3.jpg">
+            <img src="images/produit4.jpg">
+
+            <!-- duplication -->
+            <img src="images/produit1.jpg">
+            <img src="images/produit2.jpg">
+            <img src="images/produit3.jpg">
+            <img src="images/produit4.jpg">
+        </div>
+    </div>
+</section>
+
+<!-- PRODUITS -->
+<section id="produits" class="section">
+    <h2>Nos Produits</h2>
+    <div class="products">
+
+        <div class="product">
+            <img src="images/produit1.jpg">
+            <h3>Ceinture Thérapeutique</h3>
+            <p>Massage et stimulation énergétique.</p>
+            <button onclick="commander('Ceinture Thérapeutique')">Commander</button>
+        </div>
+
+        <div class="product">
+            <img src="images/produit2.jpg">
+            <h3>Appareil Multifonction</h3>
+            <p>Soutien du bien-être quotidien.</p>
+            <button onclick="commander('Appareil Multifonction')">Commander</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="apropos" class="section">
+    <h2>À PROPOS DE NOUS</h2>
+
+    <p style="max-width:800px;margin:auto;text-align:justify;">
+    Santé pour Tous promeut le bien-être naturel inspiré des principes de la médecine traditionnelle chinoise.
+    </p>
+
+    <br>
+
+    <p style="max-width:800px;margin:auto;text-align:justify;">
+    En collaboration avec le groupe FOHOW, nous proposons des solutions naturelles visant à soutenir l'équilibre énergétique et améliorer la qualité de vie.
+    </p>
+
+    <ul style="max-width:800px;margin:20px auto;text-align:left;">
+        <li><strong>Prévention :</strong> Promotion d’un mode de vie sain.</li>
+        <li><strong>Soutien :</strong> Produits naturels adaptés.</li>
+        <li><strong>Éducation :</strong> Sensibilisation au bien-être global.</li>
+    </ul>
+</section>
+
+<footer id="contact">
+    © 2026 Santé pour Tous - Contact WhatsApp : +235 95 98 30 25
+</footer>
+
+<script>
+function commander(produit){
+    let numero="23595983025";
+    let message="Bonjour, je souhaite commander : "+produit;
+    window.open("https://wa.me/"+numero+"?text="+encodeURIComponent(message));
 }
+</script>
 
-.hero p{
-    max-width:700px;
-    margin-bottom:30px;
-}
-
-.btn{
-    background:#d4af37;
-    color:#0b3d2e;
-    padding:12px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.logo {
-    width: 80px;
-    height: auto;
-    margin-right: 15px;
-}
-    
-
-.btn:hover{
-    background:white;
-}
-
-.section{
+</body>
+</html>
     padding:70px 8%;
     text-align:center;
 }
