@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+l<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -196,7 +196,22 @@ footer{
         font-size:28px;
     }
 }
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
 
+.slide {
+    width: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+    
 </style>
 
 <script>
@@ -235,6 +250,11 @@ setInterval(() => {
     <p>Produits bio, appareils de massage et solutions d'analyse inspirés de la médecine traditionnelle chinoise. Livraison disponible au Tchad.</p>
     <a href="#" class="btn">Découvrir la Boutique</a>
 </section>
+        <div class="slider">
+    <img src="produit1.jpg" class="slide active">
+    <img src="produit2.jpg" class="slide">
+    <img src="produit3.jpg" class="slide">
+        </div>
 
 <section class="section">
     <h3>NOS PRODUITS</h3>
@@ -267,11 +287,6 @@ setInterval(() => {
     </div>
 </section>
 
-    <div class="slider">
-    <img src="produit1.jpg" class="slide active">
-    <img src="produit2.jpg" class="slide">
-    <img src="produit3.jpg" class="slide">
-    </div>
     
 <footer>
     <p>© 2026 Santé pour Tous | Tous droits réservés</p>
