@@ -3,270 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Santé pour Tous - Boutique Officielle</title>
+<title>Santé pour Tous - E-commerce</title>
 
 <style>
-html { scroll-behavior:smooth; }
-
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#f4f7f6;
-}
-
-/* HEADER */
-header{
-    background:#0b3d2e;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-header img{ height:55px; }
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-weight:bold;
-}
-
-nav a:hover{ color:#7fffd4; }
-
-/* HERO */
-.hero{
-    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-    url('images/produit1.jpg');
-    background-size:cover;
-    background-position:center;
-    color:white;
-    text-align:center;
-    padding:120px 20px;
-}
-
-.hero h1{ font-size:42px; }
-
-/* CAROUSEL */
-.carousel{
-    overflow:hidden;
-    background:white;
-    padding:30px 0;
-}
-
-.carousel-track{
-    display:flex;
-    width:calc(250px * 8);
-    animation:scroll 35s linear infinite;
-}
-
-.carousel-track img{
-    width:250px;
-    height:180px;
-    object-fit:cover;
-    margin-right:20px;
-    border-radius:12px;
-}
-
-@keyframes scroll{
-    0%{ transform:translateX(0); }
-    100%{ transform:translateX(-50%); }
-}
-
-/* SECTION */
-.section{
-    padding:70px 20px;
-    text-align:center;
-}
-
-.products{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
-}
-
-.product{
-    background:white;
-    width:260px;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.product:hover{
-    transform:translateY(-8px);
-}
-
-.product img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-.price{
-    color:#0b3d2e;
-    font-size:18px;
-    font-weight:bold;
-    margin:10px 0;
-}
-
-button{
-    padding:10px 15px;
-    background:#0b3d2e;
-    color:white;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    margin-top:5px;
-}
-
-button:hover{ background:#145c46; }
-
-/* CONTACT */
-.contact-box{
-    background:white;
-    max-width:600px;
-    margin:auto;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-/* FOOTER */
-footer{
-    background:#0b3d2e;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp-float{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px 18px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
-}
+body{margin:0;font-family:Arial;background:#f4f7f6}
+header{background:#0b3d2e;color:white;padding:15px;display:flex;justify-content:space-between;align-items:center}
+nav button{margin-left:10px;padding:5px 10px}
+.section{padding:40px;text-align:center}
+.products{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.product{background:white;padding:15px;width:220px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,0.1)}
+button{background:#0b3d2e;color:white;border:none;padding:8px;border-radius:5px;cursor:pointer}
+button:hover{background:#145c46}
+#cart{position:fixed;top:0;right:0;background:white;width:300px;height:100%;overflow:auto;padding:15px;box-shadow:-3px 0 10px rgba(0,0,0,0.2)}
+.lang-switch button{background:white;color:#0b3d2e;border:1px solid #0b3d2e}
+.admin{background:white;margin-top:30px;padding:20px}
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="logo.png">
-    <nav>
-        <a href="#accueil">ACCUEIL</a>
-        <a href="#produits">BOUTIQUE</a>
-        <a href="#apropos">À PROPOS</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
+<h2 id="title">Santé pour Tous</h2>
+<div class="lang-switch">
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('ar')">AR</button>
+</div>
 </header>
 
-<section id="accueil" class="hero">
-    <h1>Votre Boutique Santé & Bien-Être</h1>
-    <p>Solutions naturelles inspirées de la Médecine Traditionnelle Chinoise</p>
-</section>
-
-<section class="carousel">
-    <div class="carousel-track">
-        <img src="logo.png">
-        <img src="logo.png">
-        <img src="logo.png">
-        <img src="logo.png">
-        <img src="logo.png">
-        <img src="logo.png">
-        <img src="logo.pngg">
-        <img src="logo.png">
-    </div>
-</section>
-
-<section id="produits" class="section">
-<h2>Nos Produits</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="logo.png">
-<h3>Ceinture Thérapeutique</h3>
-<p>Massage, stimulation énergétique et amélioration de la circulation.</p>
-<div class="price">120 000 FCFA</div>
-<button onclick="commander('Ceinture Thérapeutique')">Commander</button>
+<div class="section">
+<h3 id="shopTitle">Nos Produits</h3>
+<div class="products" id="productList"></div>
 </div>
 
-<div class="product">
-<img src="logo.png">
-<h3>Appareil Multifonction</h3>
-<p>Technologie combinée à la MTC pour le soutien du bien-être global.</p>
-<div class="price">185 000 FCFA</div>
-<button onclick="commander('Appareil Multifonction')">Commander</button>
+<!-- PANIER -->
+<div id="cart">
+<h3 id="cartTitle">Panier</h3>
+<div id="cartItems"></div>
+<h4 id="totalText">Total: 0 FCFA</h4>
+
+<h4>Paiement</h4>
+<input type="text" id="clientName" placeholder="Nom complet"><br><br>
+<input type="text" id="clientPhone" placeholder="Téléphone"><br><br>
+
+<button onclick="pay('Airtel Money')">Payer Airtel Money</button>
+<button onclick="pay('Moov Money')">Payer Moov Money</button>
 </div>
 
+<!-- ADMIN -->
+<div class="section admin">
+<h3>Tableau de Gestion des Commandes</h3>
+<table border="1" width="100%">
+<thead>
+<tr>
+<th>Nom</th>
+<th>Téléphone</th>
+<th>Produits</th>
+<th>Total</th>
+<th>Paiement</th>
+</tr>
+</thead>
+<tbody id="ordersTable"></tbody>
+</table>
 </div>
-</section>
-
-<section id="apropos" class="section" style="background:#eef4f2;">
-<h2>À Propos de FOHOW International</h2>
-
-<p style="max-width:900px;margin:auto;text-align:justify;">
-FOHOW International est un groupe engagé dans la recherche, la production et la diffusion de solutions de santé intégrative combinant les principes de la médecine traditionnelle chinoise (MTC) et l’innovation technologique moderne.
-</p>
-
-<br>
-
-<p style="max-width:900px;margin:auto;text-align:justify;">
-L’approche repose sur la régulation énergétique, la stimulation des méridiens, l’amélioration de la microcirculation et le soutien des fonctions physiologiques naturelles grâce à des dispositifs technologiques inspirés de la MTC.
-</p>
-
-<ul style="max-width:900px;margin:20px auto;text-align:left;">
-<li><strong>Intégration Tradition & Technologie :</strong> Fusion entre savoir ancestral et ingénierie moderne.</li>
-<li><strong>Recherche & Innovation :</strong> Développement d’appareils de massage et de stimulation énergétique.</li>
-<li><strong>Prévention & Bien-être :</strong> Approche centrée sur l’équilibre global.</li>
-<li><strong>Expansion Internationale :</strong> Présence dans plusieurs pays avec réseau de distribution structuré.</li>
-</ul>
-</section>
-
-<section id="contact" class="section">
-<h2>Contactez-Nous</h2>
-
-<div class="contact-box">
-<p><strong>Téléphone :</strong> 
-<a href="tel:+23595983025">+235 95 98 30 25</a></p>
-
-<p><strong>WhatsApp :</strong> 
-<a href="https://wa.me/23595983025" target="_blank">Écrire directement</a></p>
-
-<p><strong>Email :</strong> contact@santepourtous.com</p>
-
-<p>Disponible 7j/7 pour conseils et commandes.</p>
-</div>
-</section>
-
-<footer>
-© 2026 Santé pour Tous - Boutique Officielle
-</footer>
-
-<a class="whatsapp-float" href="https://wa.me/23595983025" target="_blank">
-WhatsApp
-</a>
 
 <script>
-function commander(produit){
-let numero="23595983025";
-let message="Bonjour, je souhaite commander : "+produit;
-window.open("https://wa.me/"+numero+"?text="+encodeURIComponent(message));
+let cart=[];
+let orders=JSON.parse(localStorage.getItem("orders"))||[];
+
+const translations={
+fr:{shop:"Nos Produits",cart:"Panier",total:"Total"},
+en:{shop:"Our Products",cart:"Cart",total:"Total"},
+ar:{shop:"منتجاتنا",cart:"السلة",total:"المجموع"}
+};
+
+function setLang(lang){
+document.getElementById("shopTitle").innerText=translations[lang].shop;
+document.getElementById("cartTitle").innerText=translations[lang].cart;
+document.getElementById("totalText").innerText=translations[lang].total+": "+getTotal()+" FCFA";
+if(lang==="ar"){document.body.dir="rtl"} else{document.body.dir="ltr"}
 }
+
+const categories=[
+"Régulation","Nettoyage","Beauté","Supplément","Appareils"
+];
+
+function loadProducts(){
+let container=document.getElementById("productList");
+categories.forEach(cat=>{
+for(let i=1;i<=4;i++){
+let price=(i*25000);
+container.innerHTML+=`
+<div class="product">
+<h4>${cat} ${i}</h4>
+<p>${price} FCFA</p>
+<button onclick="addToCart('${cat} ${i}',${price})">Ajouter</button>
+</div>`;
+}
+});
+}
+loadProducts();
+
+function addToCart(name,price){
+cart.push({name,price});
+renderCart();
+}
+
+function renderCart(){
+let cartDiv=document.getElementById("cartItems");
+cartDiv.innerHTML="";
+cart.forEach((item,index)=>{
+cartDiv.innerHTML+=`
+<p>${item.name} - ${item.price} FCFA
+<button onclick="removeItem(${index})">X</button></p>`;
+});
+document.getElementById("totalText").innerText="Total: "+getTotal()+" FCFA";
+}
+
+function removeItem(index){
+cart.splice(index,1);
+renderCart();
+}
+
+function getTotal(){
+return cart.reduce((sum,item)=>sum+item.price,0);
+}
+
+function pay(method){
+let name=document.getElementById("clientName").value;
+let phone=document.getElementById("clientPhone").value;
+if(cart.length===0||!name||!phone){
+alert("Veuillez remplir toutes les informations.");
+return;
+}
+
+let order={
+name:name,
+phone:phone,
+products:cart.map(p=>p.name).join(", "),
+total:getTotal(),
+payment:method
+};
+
+orders.push(order);
+localStorage.setItem("orders",JSON.stringify(orders));
+
+alert("Paiement simulé via "+method+" réussi !");
+cart=[];
+renderCart();
+renderOrders();
+}
+
+function renderOrders(){
+let table=document.getElementById("ordersTable");
+table.innerHTML="";
+orders.forEach(o=>{
+table.innerHTML+=`
+<tr>
+<td>${o.name}</td>
+<td>${o.phone}</td>
+<td>${o.products}</td>
+<td>${o.total} FCFA</td>
+<td>${o.payment}</td>
+</tr>`;
+});
+}
+renderOrders();
 </script>
 
 </body>
