@@ -46,6 +46,22 @@ nav a{
 nav a:hover{
     color:#d4af37;
 }
+    .slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+    
 
 .hero{
     height:90vh;
@@ -188,7 +204,16 @@ function commander(produit){
     let numero = "23595983025"; 
     let message = "Bonjour, je souhaite commander : " + produit;
     window.open("https://wa.me/" + numero + "?text=" + encodeURIComponent(message));
-}
+    }
+    let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+}, 10000); // 10000 ms = 10 secondes
+
 </script>
 
 </head>
@@ -242,6 +267,12 @@ function commander(produit){
     </div>
 </section>
 
+    <div class="slider">
+    <img src="produit1.jpg" class="slide active">
+    <img src="produit2.jpg" class="slide">
+    <img src="produit3.jpg" class="slide">
+    </div>
+    
 <footer>
     <p>© 2026 Santé pour Tous | Tous droits réservés</p>
     <p>Contact : +235 95 98 30 25</p>
