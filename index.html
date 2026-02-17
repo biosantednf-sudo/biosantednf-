@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Santé pour Tous</title>
+<title>Santé pour Tous - Boutique Officielle</title>
 
 <style>
+html { scroll-behavior:smooth; }
+
 body{
     margin:0;
     font-family:Arial, sans-serif;
-    background:#f8f9f8;
+    background:#f4f7f6;
 }
 
 /* HEADER */
@@ -20,50 +22,46 @@ header{
     justify-content:space-between;
     align-items:center;
     padding:15px 40px;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-header img{
-    height:60px;
-}
+header img{ height:55px; }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:25px;
+    margin-left:20px;
     font-weight:bold;
 }
 
-nav a:hover{
-    color:#cce3d8;
-}
+nav a:hover{ color:#7fffd4; }
 
 /* HERO */
 .hero{
-    background:#e6f2ed;
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+    url('images/produit1.jpg');
+    background-size:cover;
+    background-position:center;
+    color:white;
     text-align:center;
-    padding:80px 20px;
+    padding:120px 20px;
 }
 
-.hero h1{
-    font-size:40px;
-    color:#0b3d2e;
-}
+.hero h1{ font-size:42px; }
 
 /* CAROUSEL */
-.carousel-section{
-    padding:40px 0;
-    background:#ffffff;
-}
-
 .carousel{
     overflow:hidden;
-    width:100%;
+    background:white;
+    padding:30px 0;
 }
 
 .carousel-track{
     display:flex;
     width:calc(250px * 8);
-    animation:scroll 30s linear infinite;
+    animation:scroll 35s linear infinite;
 }
 
 .carousel-track img{
@@ -79,25 +77,30 @@ nav a:hover{
     100%{ transform:translateX(-50%); }
 }
 
-/* SECTION PRODUITS */
+/* SECTION */
 .section{
-    padding:60px 20px;
+    padding:70px 20px;
     text-align:center;
 }
 
 .products{
     display:flex;
     justify-content:center;
-    gap:30px;
     flex-wrap:wrap;
+    gap:25px;
 }
 
 .product{
     background:white;
-    padding:20px;
     width:260px;
+    padding:20px;
     border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.product:hover{
+    transform:translateY(-8px);
 }
 
 .product img{
@@ -107,23 +110,33 @@ nav a:hover{
     border-radius:10px;
 }
 
+.price{
+    color:#0b3d2e;
+    font-size:18px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
 button{
-    margin-top:10px;
     padding:10px 15px;
     background:#0b3d2e;
     color:white;
     border:none;
     border-radius:6px;
     cursor:pointer;
+    margin-top:5px;
 }
 
-button:hover{
-    background:#145c46;
-}
+button:hover{ background:#145c46; }
 
-/* A PROPOS */
-#apropos{
-    background:#f0f4f2;
+/* CONTACT */
+.contact-box{
+    background:white;
+    max-width:600px;
+    margin:auto;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
 /* FOOTER */
@@ -133,13 +146,26 @@ footer{
     text-align:center;
     padding:20px;
 }
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="images/logo.png" alt="Logo">
+    <img src="logo.png">
     <nav>
         <a href="#accueil">ACCUEIL</a>
         <a href="#produits">BOUTIQUE</a>
@@ -149,80 +175,97 @@ footer{
 </header>
 
 <section id="accueil" class="hero">
-    <h1>Bienvenue chez Santé pour Tous</h1>
-    <p>Votre partenaire pour le bien-être naturel</p>
+    <h1>Votre Boutique Santé & Bien-Être</h1>
+    <p>Solutions naturelles inspirées de la Médecine Traditionnelle Chinoise</p>
 </section>
 
-<!-- CAROUSEL -->
-<section class="carousel-section">
-    <div class="carousel">
-        <div class="carousel-track">
-            <img src="images/produit1.jpg">
-            <img src="images/produit2.jpg">
-            <img src="images/produit3.jpg">
-            <img src="images/produit4.jpg">
-
-            <!-- duplication -->
-            <img src="images/produit1.jpg">
-            <img src="images/produit2.jpg">
-            <img src="images/produit3.jpg">
-            <img src="images/produit4.jpg">
-        </div>
+<section class="carousel">
+    <div class="carousel-track">
+        <img src="logo.png">
+        <img src="logo.png">
+        <img src="logo.png">
+        <img src="logo.png">
+        <img src="logo.png">
+        <img src="logo.png">
+        <img src="logo.pngg">
+        <img src="logo.png">
     </div>
 </section>
 
-<!-- PRODUITS -->
 <section id="produits" class="section">
-    <h2>Nos Produits</h2>
-    <div class="products">
+<h2>Nos Produits</h2>
 
-        <div class="product">
-            <img src="images/produit1.jpg">
-            <h3>Ceinture Thérapeutique</h3>
-            <p>Massage et stimulation énergétique.</p>
-            <button onclick="commander('Ceinture Thérapeutique')">Commander</button>
-        </div>
+<div class="products">
 
-        <div class="product">
-            <img src="images/produit2.jpg">
-            <h3>Appareil Multifonction</h3>
-            <p>Soutien du bien-être quotidien.</p>
-            <button onclick="commander('Appareil Multifonction')">Commander</button>
-        </div>
+<div class="product">
+<img src="logo.png">
+<h3>Ceinture Thérapeutique</h3>
+<p>Massage, stimulation énergétique et amélioration de la circulation.</p>
+<div class="price">120 000 FCFA</div>
+<button onclick="commander('Ceinture Thérapeutique')">Commander</button>
+</div>
 
-    </div>
+<div class="product">
+<img src="logo.png">
+<h3>Appareil Multifonction</h3>
+<p>Technologie combinée à la MTC pour le soutien du bien-être global.</p>
+<div class="price">185 000 FCFA</div>
+<button onclick="commander('Appareil Multifonction')">Commander</button>
+</div>
+
+</div>
 </section>
 
-<!-- A PROPOS -->
-<section id="apropos" class="section">
-    <h2>À PROPOS DE NOUS</h2>
+<section id="apropos" class="section" style="background:#eef4f2;">
+<h2>À Propos de FOHOW International</h2>
 
-    <p style="max-width:800px;margin:auto;text-align:justify;">
-    Santé pour Tous promeut le bien-être naturel inspiré des principes de la médecine traditionnelle chinoise.
-    </p>
+<p style="max-width:900px;margin:auto;text-align:justify;">
+FOHOW International est un groupe engagé dans la recherche, la production et la diffusion de solutions de santé intégrative combinant les principes de la médecine traditionnelle chinoise (MTC) et l’innovation technologique moderne.
+</p>
 
-    <br>
+<br>
 
-    <p style="max-width:800px;margin:auto;text-align:justify;">
-    En collaboration avec le groupe FOHOW, nous proposons des solutions naturelles visant à soutenir l'équilibre énergétique et améliorer la qualité de vie.
-    </p>
+<p style="max-width:900px;margin:auto;text-align:justify;">
+L’approche repose sur la régulation énergétique, la stimulation des méridiens, l’amélioration de la microcirculation et le soutien des fonctions physiologiques naturelles grâce à des dispositifs technologiques inspirés de la MTC.
+</p>
 
-    <ul style="max-width:800px;margin:20px auto;text-align:left;">
-        <li><strong>Prévention :</strong> Promotion d’un mode de vie sain.</li>
-        <li><strong>Soutien :</strong> Produits naturels adaptés.</li>
-        <li><strong>Éducation :</strong> Sensibilisation au bien-être global.</li>
-    </ul>
+<ul style="max-width:900px;margin:20px auto;text-align:left;">
+<li><strong>Intégration Tradition & Technologie :</strong> Fusion entre savoir ancestral et ingénierie moderne.</li>
+<li><strong>Recherche & Innovation :</strong> Développement d’appareils de massage et de stimulation énergétique.</li>
+<li><strong>Prévention & Bien-être :</strong> Approche centrée sur l’équilibre global.</li>
+<li><strong>Expansion Internationale :</strong> Présence dans plusieurs pays avec réseau de distribution structuré.</li>
+</ul>
 </section>
 
-<footer id="contact">
-    © 2026 Santé pour Tous - Contact WhatsApp : +235 95 98 30 25
+<section id="contact" class="section">
+<h2>Contactez-Nous</h2>
+
+<div class="contact-box">
+<p><strong>Téléphone :</strong> 
+<a href="tel:+23595983025">+235 95 98 30 25</a></p>
+
+<p><strong>WhatsApp :</strong> 
+<a href="https://wa.me/23595983025" target="_blank">Écrire directement</a></p>
+
+<p><strong>Email :</strong> contact@santepourtous.com</p>
+
+<p>Disponible 7j/7 pour conseils et commandes.</p>
+</div>
+</section>
+
+<footer>
+© 2026 Santé pour Tous - Boutique Officielle
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/23595983025" target="_blank">
+WhatsApp
+</a>
 
 <script>
 function commander(produit){
-    let numero="23595983025";
-    let message="Bonjour, je souhaite commander : "+produit;
-    window.open("https://wa.me/"+numero+"?text="+encodeURIComponent(message));
+let numero="23595983025";
+let message="Bonjour, je souhaite commander : "+produit;
+window.open("https://wa.me/"+numero+"?text="+encodeURIComponent(message));
 }
 </script>
 
