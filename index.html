@@ -16,7 +16,6 @@ background:#f4f7f6;
 color:#222;
 line-height:1.6;
 }
-
 /* HEADER */
 header{
 background:#0b3d2e;
@@ -24,15 +23,31 @@ color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 30px;
+padding:10px 30px;
 position:sticky;
 top:0;
 z-index:1000;
 }
 
-.logo{
+/* LOGO */
+.logo-container{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-img{
+width:55px;
+height:55px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid white;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.logo-text{
 font-weight:bold;
-font-size:20px;
+font-size:18px;
 }
 
 nav{
@@ -208,7 +223,10 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <body>
 
 <header>
-<div class="logo">Cabinet Santé FOHOW - Tchad</div>
+  <div class="logo-container">
+    <img src="file.png" alt="Logo Cabinet" class="logo-img">
+    <span class="logo-text">Cabinet Santé FOHOW - Tchad</span>
+  </div>
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 <nav id="nav">
 <a href="#accueil">Accueil</a>
@@ -440,6 +458,7 @@ let numero="23595983025";
 let message="Bonjour, je souhaite commander : "+produit;
 window.open("https://wa.me/"+numero+"?text="+encodeURIComponent(message));
 }
+  
 </script>
 
 </body>
