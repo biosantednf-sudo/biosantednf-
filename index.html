@@ -3,19 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cabinet Santé & Bien-Être - FOHOW Tchad</title>
+<title>Santé pour tous-Tchad</title>
 
 <style>
 
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial, Helvetica, sans-serif;background:#f4f7f6;color:#222;}
+html{scroll-behavior:smooth;}
 
-body{
-font-family: 'Segoe UI', Arial, sans-serif;
-background:#f4f7f6;
-color:#222;
-line-height:1.6;
-}
 /* HEADER */
 header{
 background:#0b3d2e;
@@ -23,55 +19,27 @@ color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:10px 30px;
+padding:15px 30px;
 position:sticky;
 top:0;
 z-index:1000;
 }
 
-/* LOGO */
-.logo-container{
-display:flex;
-align-items:center;
-gap:12px;
-}
+.logo{font-weight:bold;font-size:20px;}
 
-.logo-img{
-width:55px;
-height:55px;
-border-radius:50%;
-object-fit:cover;
-border:3px solid white;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-}
-
-.logo-text{
-font-weight:bold;
-font-size:18px;
-}
-.logo-img{
-transition:0.3s;
-}
-
-.logo-img:hover{
-transform:scale(1.05);
-}
-  
 nav{
 display:flex;
-gap:25px;
+gap:20px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-font-weight:600;
+font-weight:bold;
 transition:0.3s;
 }
 
-nav a:hover{
-color:#7fffd4;
-}
+nav a:hover{color:#7fffd4;}
 
 .menu-toggle{
 display:none;
@@ -79,7 +47,6 @@ font-size:28px;
 cursor:pointer;
 }
 
-/* MOBILE */
 @media(max-width:768px){
 nav{
 position:absolute;
@@ -99,106 +66,92 @@ nav.active{display:flex;}
 /* HERO */
 .hero{
 background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('logo.png');
+url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5');
 background-size:cover;
 background-position:center;
 color:white;
 text-align:center;
-padding:130px 20px;
+padding:120px 20px;
 }
 
-.hero h1{
-font-size:42px;
-margin-bottom:15px;
-}
+.hero h1{font-size:38px;margin-bottom:10px;}
+.hero p{margin-bottom:20px;}
 
-.hero p{
-max-width:700px;
-margin:auto;
-font-size:18px;
+button{
+padding:8px 14px;
+background:#0b3d2e;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
 }
+button:hover{background:#145c46;}
 
 /* SECTION */
-.section{
-padding:70px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:40px;
-color:#0b3d2e;
-}
-
-/* PRODUCTS */
-.category{
-margin-bottom:60px;
-}
-
-.category h3{
-color:#145c46;
-margin-bottom:20px;
-}
+.section{padding:60px 20px;text-align:center;}
+.section h2{color:#0b3d2e;margin-bottom:20px;}
 
 .products{
 display:flex;
 flex-wrap:wrap;
-gap:25px;
 justify-content:center;
+gap:20px;
+margin-top:30px;
 }
 
 .product{
 background:white;
-width:280px;
-padding:18px;
-border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
+width:240px;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
-.product:hover{
-transform:translateY(-8px);
-}
-
+.product:hover{transform:translateY(-6px);}
 .product img{
 width:100%;
-height:170px;
+height:150px;
 object-fit:cover;
 border-radius:10px;
-margin-bottom:10px;
 }
 
-.price{
-color:#0b3d2e;
-font-weight:bold;
-margin:8px 0;
-}
+.price{color:#0b3d2e;font-weight:bold;margin:8px 0;}
 
-button{
-background:#0b3d2e;
-color:white;
-padding:8px 14px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-background:#145c46;
-}
-
-/* SERVICES */
-.services{
+/* PROMO SLIDER */
+.promo{
 background:white;
-padding:50px 20px;
+padding:40px 0;
 text-align:center;
 }
 
-.services h2{
-color:#0b3d2e;
-margin-bottom:20px;
+.slider{
+position:relative;
+max-width:1000px;
+margin:auto;
+overflow:hidden;
+}
+
+.slide{
+display:none;
+}
+
+.slide.active{
+display:block;
+animation:fade 1s ease-in-out;
+}
+
+.slide img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:12px;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
 }
 
 /* FOOTER */
@@ -206,8 +159,8 @@ footer{
 background:#0b3d2e;
 color:white;
 text-align:center;
-padding:30px 20px;
-margin-top:60px;
+padding:20px;
+margin-top:40px;
 }
 
 /* WHATSAPP */
@@ -217,11 +170,10 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 18px;
+padding:15px 20px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 </style>
@@ -230,10 +182,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <body>
 
 <header>
-  <div class="logo-container">
-    <img src="logo.png" alt="Logo Cabinet" class="logo-img">
-    <span class="logo-text">Santé Pour Tous-Tchad</span>
-  </div>
+<div class="logo">Santé pour tous-Tchad</div>
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 <nav id="nav">
 <a href="#accueil">ACCUEIL</a>
@@ -245,227 +194,113 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 </header>
 
 <section class="hero" id="accueil">
-<h1>Votre Centre de Soins & Bien-Être au Tchad</h1>
-<p>
-Produits inspirés de la Médecine Traditionnelle Chinoise par 
-le groupe Fohow 
-+ Massages Thérapeutiques Professionnels
-</p>
+<h1>Médecine Traditionnelle Chinoise & Produits FOHOW</h1>
+<p>Cabinet de soins au Tchad - Santé naturelle & technologie moderne</p>
+<button onclick="scrollToSection('produits')">Voir nos produits</button>
 </section>
 
-<section class="section" id="produits">
-<h2>NOS 5 GRANDES GAMMES DE PRODUITS</h2>
+<!-- PROMOTIONS -->
+<section class="promo">
+<h2>Produits en Promotion 🔥</h2>
+<div class="slider">
+<div class="slide active"><img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"><p>Ceinture Énergétique - Promo</p></div>
+<div class="slide"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289"><p>Complément Vitalité - Promo</p></div>
+<div class="slide"><img src="https://images.unsplash.com/photo-1580281657527-47bafc61e89d"><p>Crème Beauté FOHOW</p></div>
+<div class="slide"><img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6"><p>Patch Détox - Promo</p></div>
+<div class="slide"><img src="https://images.unsplash.com/photo-1597764699519-3e63dcadab50"><p>Appareil Thérapeutique</p></div>
+<div class="slide"><img src="https://images.unsplash.com/photo-1580281658629-5b8b5a2e52d7"><p>Capsules Régulation</p></div>
+</div>
+</section>
 
-<!-- Beauté -->
-<div class="category">
+<!-- PRODUITS -->
+<section class="section" id="produits">
+<h2>Nos Produits FOHOW</h2>
+
 <h3>Produits de Beauté</h3>
 <div class="products">
-
-<div class="product">
-<img src="logo.png">
-<h4>Crème Impériale FOHOW</h4>
-<p>Hydratation et soin du visage.</p>
-<div class="price">35 000 FCFA</div>
-<button onclick="commander('Crème Impériale FOHOW')">Commander</button>
+<div class="product"><img src="https://images.unsplash.com/photo-1580281657527-47bafc61e89d"><h4>Crème revitalisante</h4><div class="price">35 000 FCFA</div><button onclick="commander('Crème revitalisante')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1597764699519-3e63dcadab50"><h4>Masque facial naturel</h4><div class="price">28 000 FCFA</div><button onclick="commander('Masque facial')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6"><h4>Sérum anti-âge</h4><div class="price">45 000 FCFA</div><button onclick="commander('Sérum anti-âge')">Commander</button></div>
 </div>
 
-<div class="product">
-<img src="logo.png">
-<h4>Masque Revitalisant</h4>
-<p>Éclat naturel de la peau.</p>
-<div class="price">28 000 FCFA</div>
-<button onclick="commander('Masque Revitalisant')">Commander</button>
-</div>
-
-<div class="product">
-<img src="logo.png">
-<h4>Sérum Anti-Âge</h4>
-<p>Soin régénérant intense.</p>
-<div class="price">45 000 FCFA</div>
-<button onclick="commander('Sérum Anti-Âge')">Commander</button>
-</div>
-
-</div>
-</div>
-
-<!-- Supplémentation -->
-<div class="category">
 <h3>Produits de Supplémentation</h3>
 <div class="products">
-
-<div class="product">
-<img src="logo.png">
-<h4>Capsules Vitalité</h4>
-<p>Soutien énergétique naturel.</p>
-<div class="price">50 000 FCFA</div>
-<button onclick="commander('Capsules Vitalité')">Commander</button>
+<div class="product"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289"><h4>Capsules Vitalité</h4><div class="price">50 000 FCFA</div><button onclick="commander('Capsules Vitalité')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"><h4>Thé Détox</h4><div class="price">25 000 FCFA</div><button onclick="commander('Thé Détox')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1580281658629-5b8b5a2e52d7"><h4>Complément Immunité</h4><div class="price">40 000 FCFA</div><button onclick="commander('Complément Immunité')">Commander</button></div>
 </div>
 
-<div class="product">
-<img src="logo.png">
-<h4>Complément Immunité</h4>
-<p>Renforcement de l’organisme.</p>
-<div class="price">48 000 FCFA</div>
-<button onclick="commander('Complément Immunité')">Commander</button>
-</div>
-
-<div class="product">
-<img src="logo.png">
-<h4>Thé Équilibre</h4>
-<p>Harmonie interne naturelle.</p>
-<div class="price">25 000 FCFA</div>
-<button onclick="commander('Thé Équilibre')">Commander</button>
-</div>
-
-</div>
-</div>
-
-<!-- Nettoyage -->
-<div class="category">
 <h3>Produits de Nettoyage</h3>
 <div class="products">
-
-<div class="product">
-<img src="logo.png">
-<h4>Patch Détox FOHOW</h4>
-<p>Soutien du processus naturel de détoxification.</p>
-<div class="price">30 000 FCFA</div>
-<button onclick="commander('Patch Détox FOHOW')">Commander</button>
+<div class="product"><img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6"><h4>Patch Détox</h4><div class="price">20 000 FCFA</div><button onclick="commander('Patch Détox')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"><h4>Huile purifiante</h4><div class="price">30 000 FCFA</div><button onclick="commander('Huile purifiante')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1580281657527-47bafc61e89d"><h4>Infusion Nettoyante</h4><div class="price">22 000 FCFA</div><button onclick="commander('Infusion Nettoyante')">Commander</button></div>
 </div>
 
-<div class="product">
-<img src="logo.png">
-<h4>Thé Détox</h4>
-<p>Nettoyage interne doux.</p>
-<div class="price">22 000 FCFA</div>
-<button onclick="commander('Thé Détox')">Commander</button>
-</div>
-
-<div class="product">
-<img src="logo.png">
-<h4>Solution Purifiante</h4>
-<p>Bien-être digestif.</p>
-<div class="price">27 000 FCFA</div>
-<button onclick="commander('Solution Purifiante')">Commander</button>
-</div>
-
-</div>
-</div>
-
-<!-- Régulation -->
-<div class="category">
 <h3>Produits de Régulation</h3>
 <div class="products">
-
-<div class="product">
-<img src="logo.png">
-<h4>Capsules Équilibre</h4>
-<p>Soutien circulatoire.</p>
-<div class="price">55 000 FCFA</div>
-<button onclick="commander('Capsules Équilibre')">Commander</button>
+<div class="product"><img src="https://images.unsplash.com/photo-1580281658629-5b8b5a2e52d7"><h4>Capsules Régulation</h4><div class="price">45 000 FCFA</div><button onclick="commander('Capsules Régulation')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"><h4>Équilibre Digestif</h4><div class="price">38 000 FCFA</div><button onclick="commander('Équilibre Digestif')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289"><h4>Régulateur Énergétique</h4><div class="price">60 000 FCFA</div><button onclick="commander('Régulateur Énergétique')">Commander</button></div>
 </div>
 
-<div class="product">
-<img src="logo.png">
-<h4>Thé Régulateur</h4>
-<p>Harmonisation interne.</p>
-<div class="price">29 000 FCFA</div>
-<button onclick="commander('Thé Régulateur')">Commander</button>
-</div>
-
-<div class="product">
-<img src="logo.png">
-<h4>Gélules Tonifiantes</h4>
-<p>Vitalité et équilibre.</p>
-<div class="price">42 000 FCFA</div>
-<button onclick="commander('Gélules Tonifiantes')">Commander</button>
-</div>
-
-</div>
-</div>
-
-<!-- Appareils -->
-<div class="category">
 <h3>Appareils de Santé FOHOW</h3>
 <div class="products">
-
-<div class="product">
-<img src="al.png">
-<h4>Ceinture Thérapeutique</h4>
-<p>Massage et relaxation.</p>
-<div class="price">120 000 FCFA</div>
-<button onclick="commander('Ceinture Thérapeutique FOHOW')">Commander</button>
-</div>
-
-<div class="product">
-<img src="al.png">
-<h4>Appareil Multifonction</h4>
-<p>Stimulation énergétique.</p>
-<div class="price">185 000 FCFA</div>
-<button onclick="commander('Appareil Multifonction FOHOW')">Commander</button>
-</div>
-
-<div class="product">
-<img src="al.png">
-<h4>Matelas Énergétique</h4>
-<p>Détente profonde.</p>
-<div class="price">350 000 FCFA</div>
-<button onclick="commander('Matelas Énergétique FOHOW')">Commander</button>
-</div>
-
-</div>
+<div class="product"><img src="https://images.unsplash.com/photo-1597764699519-3e63dcadab50"><h4>Ceinture Énergétique</h4><div class="price">120 000 FCFA</div><button onclick="commander('Ceinture Énergétique')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"><h4>Appareil Multifonction</h4><div class="price">185 000 FCFA</div><button onclick="commander('Appareil Multifonction')">Commander</button></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1580281657527-47bafc61e89d"><h4>Lit de massage thérapeutique</h4><div class="price">Sur commande</div><button onclick="commander('Lit de massage')">Commander</button></div>
 </div>
 
 </section>
 
-<section class="services" id="services">
+<section class="section" id="services">
 <h2>Massages Thérapeutiques</h2>
-<p>
-Nous proposons des massages thérapeutiques inspirés des techniques traditionnelles chinoises :
-✔ Massage énergétique  
-✔ Massage relaxant  
-✔ Massage anti-douleur  
-✔ Massage circulatoire  
-✔ Séances personnalisées
-</p>
+<p>Nous proposons des massages thérapeutiques basés sur les principes de la médecine traditionnelle chinoise : relaxation, stimulation énergétique et rééquilibrage du corps.</p>
 </section>
 
 <section class="section" id="apropos">
-<h2>À PROPOS DE NOTRE CABINET</h2>
-<p>
-Notre cabinet au Tchad œuvre pour le bien-être global à travers des produits inspirés de la médecine traditionnelle chinoise(TCM) 
-et les solutions du groupe FOHOW.  
-Nous accompagnons nos clients vers un mode de vie équilibré et naturel.
-</p>
+<h2>À propos de nous</h2>
+<p>Notre cabinet de soins au Tchad travaille avec les produits du <strong>FOHOW Groupe</strong>, entreprise spécialisée dans la médecine traditionnelle chinoise moderne.</p>
+<p>Nous combinons produits naturels, appareils thérapeutiques et expertise professionnelle pour améliorer la santé et le bien-être de nos clients.</p>
 </section>
 
 <section class="section" id="contact">
 <h2>Contact</h2>
-<p><strong>Téléphone :</strong> (+235) 66 81 54 32/ 95 98 30 25</p>
-<p><strong>Email :</strong> biosantednf@gmail.com</p>
-<p><strong>WhatsApp :</strong> Disponible 7j/7</p>
+<p>Téléphone : +235 95 98 30 25</p>
+<p>Email : biosantednf@gmail.com</p>
 </section>
 
 <footer>
-© 2026 Santé Pour Tous-Tchad  
-Bien-être • Professionnalisme • Engagement
+© 2026 Cabinet Santé FOHOW - Tchad
 </footer>
 
-<a class="whatsapp" href="https://wa.me/23595983025" target="_blank">
-WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/23595983025" target="_blank">WhatsApp</a>
 
 <script>
+
 function toggleMenu(){
 document.getElementById("nav").classList.toggle("active");
 }
 
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
 function commander(produit){
 let numero="23595983025";
-let message="Bonjour Santé Pour Tous-Tchad, je souhaite commander : "+produit;
+let message="Bonjour, je souhaite commander : "+produit;
 window.open("https://wa.me/"+numero+"?text="+encodeURIComponent(message));
 }
-  
+
+/* SLIDER AUTO */
+let slides=document.querySelectorAll(".slide");
+let index=0;
+setInterval(()=>{
+slides[index].classList.remove("active");
+index=(index+1)%slides.length;
+slides[index].classList.add("active");
+},5000);
+
 </script>
 
 </body>
