@@ -3,116 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Santé pour Tous - Boutique Officielle</title>
-
+<title>Santé Bio | Boutique Officielle</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-html{scroll-behavior:smooth;}
-body{margin:0;font-family:Arial;background:#f4f7f6;}
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#f8faf9;
+color:#222;
+line-height:1.6;
+}
 
 /* HEADER */
 header{
-background:#0b3d2e;color:white;
-display:flex;justify-content:space-between;
-align-items:center;padding:15px 40px;
-position:sticky;top:0;z-index:1000;
-}
-header img{height:55px;}
-nav a{color:white;text-decoration:none;margin-left:20px;font-weight:bold;}
-nav a:hover{color:#7fffd4;}
-
-/* HERO */
-#accueil{
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('logo.png');
-background-size:cover;background-position:center;
-color:white;text-align:center;padding:140px 20px;
-}
-#accueil h1{font-size:45px;margin-bottom:10px;}
-
-/* CAROUSEL */
-.carousel{overflow:hidden;background:white;padding:30px 0;}
-.carousel-track{
+background:white;
+padding:20px 8%;
 display:flex;
-width:calc(260px * 10);
-animation:scroll 25s linear infinite;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:1000;
 }
-.carousel-track img{
-width:250px;height:180px;
-object-fit:cover;margin-right:20px;
-border-radius:12px;cursor:pointer;
+
+.logo{
+font-size:22px;
+font-weight:700;
+color:#0a5c36;
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:#333;
+font-weight:600;
 transition:0.3s;
 }
-.carousel-track img:hover{transform:scale(1.05);}
-@keyframes scroll{
-0%{transform:translateX(0);}
-100%{transform:translateX(-50%);}
+
+nav a:hover{
+color:#0a5c36;
+}
+
+/* HERO */
+.hero{
+height:85vh;
+background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:0 10%;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:30px;
+}
+
+.btn{
+background:#0a5c36;
+color:white;
+padding:14px 28px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+display:inline-block;
+}
+
+.btn:hover{
+background:#063d25;
 }
 
 /* SECTIONS */
-.section{padding:70px 20px;text-align:center;}
-.category-title{
-margin-top:50px;
-font-size:26px;
-color:#0b3d2e;
+section{
+padding:80px 10%;
 }
 
+.section-title{
+text-align:center;
+margin-bottom:50px;
+font-size:30px;
+font-weight:700;
+color:#0a5c36;
+}
+
+/* PRODUCTS */
 .products{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-margin-top:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
-.product{
-background:white;width:240px;
-padding:15px;border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-.product:hover{transform:translateY(-8px);}
-.product img{
-width:100%;height:150px;
-object-fit:cover;border-radius:10px;
-}
-.price{color:#0b3d2e;font-weight:bold;margin:8px 0;}
-
-button{
-padding:8px 12px;background:#0b3d2e;
-color:white;border:none;border-radius:6px;
-cursor:pointer;
-}
-button:hover{background:#145c46;}
-
-/* CONTACT */
-.contact-box{
-background:white;
-max-width:600px;
-margin:auto;
-padding:30px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* FOOTER */
-footer{
-background:#0b3d2e;color:white;
-text-align:center;padding:20px;
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp-float{
-position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;
-padding:15px 18px;border-radius:50px;
-text-decoration:none;font-weight:bold;
-}
-
-/* MODAL */
-.modal{
-display:none;position:fixed;
-top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.6);
 justify-content:center;align-items:center;
 }
 .modal-content{
