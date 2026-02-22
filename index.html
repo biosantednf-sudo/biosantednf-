@@ -1,220 +1,539 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>santé pour tous</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins',sans-serif;background:#f8f9fb;color:#222;}
-html{scroll-behavior:smooth;}
-
-/* HEADER */
-header{
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-position:sticky;
-top:0;
-z-index:1000;
-}
-.left-header{display:flex;align-items:center;gap:15px;}
-.left-header img{height:55px;}
-.site-name{font-weight:700;font-size:20px;color:#0b3d2e;}
-.call{font-weight:600;color:#0b3d2e;}
-nav{display:flex;gap:20px;}
-nav a{text-decoration:none;color:#333;font-weight:500;transition:0.3s;}
-nav a:hover{color:#0b3d2e;}
-.menu-toggle{display:none;font-size:28px;cursor:pointer;}
-@media(max-width:900px){
-nav{
-position:absolute;top:80px;right:0;background:white;flex-direction:column;width:100%;
-display:none;text-align:center;padding:20px 0;box-shadow:0 10px 20px rgba(0,0,0,0.1);
-}
-nav.active{display:flex;}
-.menu-toggle{display:block;}
-}
-
-/* HERO */
-.hero{
-height:80vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5');
-background-size:cover;background-position:center;
-display:flex;flex-direction:column;justify-content:center;align-items:center;
-color:white;text-align:center;padding:20px;
-}
-.hero h1{font-size:38px;margin-bottom:15px;}
-.hero p{max-width:600px;margin-bottom:25px;}
-.btn{padding:12px 25px;background:#0b3d2e;color:white;border:none;border-radius:30px;font-weight:600;cursor:pointer;transition:0.3s;}
-.btn:hover{background:#145c46;}
-
-/* SLIDER */
-.slider-section{padding:60px 20px;background:#fff;text-align:center;}
-.slider{max-width:1000px;margin:auto;position:relative;overflow:hidden;border-radius:15px;}
-.slide{display:none;}
-.slide.active{display:block;animation:fade 1s ease-in-out;}
-.slide img{width:100%;height:300px;object-fit:cover;border-radius:12px;}
-@keyframes fade{from{opacity:0;}to{opacity:1;}}
-
-/* PRODUITS */
-.section{padding:60px 20px;text-align:center;}
-.section h2{color:#0b3d2e;margin-bottom:20px;font-size:28px;}
-.products{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin-top:30px;}
-.product{background:white;width:240px;padding:15px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.1);transition:0.3s;}
-.product:hover{transform:translateY(-6px);}
-.product img{width:100%;height:150px;object-fit:cover;border-radius:10px;}
-.price{color:#0b3d2e;font-weight:bold;margin:8px 0;}
-button{padding:8px 12px;background:#0b3d2e;color:white;border:none;border-radius:6px;cursor:pointer;transition:0.3s;}
-button:hover{background:#145c46;}
-
-/* PANIER */
-#cart-box{
-position:fixed;top:80px;right:20px;background:white;padding:20px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.2);width:250px;max-height:400px;overflow-y:auto;z-index:1001;}
-#cart-box h3{margin-bottom:10px;}
-.cart-item{display:flex;justify-content:space-between;margin-bottom:8px;}
-.cart-total{font-weight:700;margin-top:10px;}
-.cart-btn{margin-top:10px;padding:8px 12px;background:#0b3d2e;color:white;border:none;border-radius:6px;cursor:pointer;width:100%;}
-.cart-btn:hover{background:#145c46;}
-
-/* FOOTER */
-footer{background:#0b3d2e;color:white;text-align:center;padding:20px;margin-top:40px;}
-
-/* WHATSAPP */
-.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOHOW Tchad - Santé Naturelle Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header Premium -->
+    <header class="header-premium">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-wrapper">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="brand-info">
+                        <h1 class="brand-title">FOHOW TCHAD</h1>
+                        <p class="brand-subtitle">Santé Naturelle Premium</p>
+                    </div>
+                </div>
+                
+                <nav class="main-nav" id="mainNav">
+                    <a href="#accueil" class="nav-link active">Accueil</a>
+                    <a href="#shop" class="nav-link">Boutique</a>
+                    <a href="#business" class="nav-link">Business</a>
+                    <a href="#events" class="nav-link">Événements</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <div class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<header>
-<div class="left-header">
-<img src="logo.html" alt="Logo FOHOW">
-<div class="site-name">FOHOW-TCHAD</div>
-</div>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-<nav id="nav">
-<a href="#accueil">Accueil</a>
-<a href="#shop">Shop</a>
-<a href="#business">Business Pack</a>
-<a href="#events">Events</a>
-<a href="#blog">Blog</a>
-<a href="#apropos">À propos</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+    <!-- Hero Premium -->
+    <section class="hero-premium" id="accueil">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="floating-particles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">Découvrez la</span>
+                        <span class="title-line highlight">Médecine Traditionnelle</span>
+                        <span class="title-line">Chinoise Moderne</span>
+                    </h1>
+                    <p class="hero-description">
+                        Des produits naturels premium pour votre bien-être et votre santé. 
+                        Rejoignez notre communauté FOHOW au Tchad.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="scrollToSection('shop')">
+                            <span>Découvrir nos produits</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn-secondary" onclick="scrollToSection('business')">
+                            <span>Devenir partenaire</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="product-showcase">
+                        <div class="product-card floating">
+                            <i class="fas fa-spa"></i>
+                            <span>Soins Naturels</span>
+                        </div>
+                        <div class="product-card floating" style="animation-delay: 1s;">
+                            <i class="fas fa-heart"></i>
+                            <span>Bien-Être</span>
+                        </div>
+                        <div class="product-card floating" style="animation-delay: 2s;">
+                            <i class="fas fa-seedling"></i>
+                            <span>100% Naturel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-<section class="hero" id="accueil">
-<h1>Bienvenue à Santé pour tous-Tchad</h1>
-<p>Cabinet de soins et vente de produits FOHOW – Médecine traditionnelle chinoise</p>
-<button class="btn" onclick="scrollToSection('shop')">Découvrir nos produits</button>
-</section>
+    <!-- Products Slider Premium -->
+    <section class="products-slider-section" id="promo">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Produits en Vedette</h2>
+                <p class="section-subtitle">Découvrez notre sélection premium de produits FOHOW</p>
+            </div>
+            <div class="products-slider">
+                <div class="slider-container">
+                    <div class="slide active" data-slide="0">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88" alt="Produit Premium 1">
+                                <div class="slide-overlay">
+                                    <div class="slide-badge">Nouveau</div>
+                                </div>
+                            </div>
+                            <div class="slide-info">
+                                <h3>Sérum Anti-Âge Premium</h3>
+                                <p>Révolutionnaire formule anti-âge à base de plantes rares</p>
+                                <div class="slide-price">45 000 FCFA</div>
+                                <button class="btn-slide" onclick="addToCart('Sérum Anti-Âge', 45000)">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span>Ajouter au panier</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide" data-slide="1">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289" alt="Produit Premium 2">
+                                <div class="slide-overlay">
+                                    <div class="slide-badge">Best Seller</div>
+                                </div>
+                            </div>
+                            <div class="slide-info">
+                                <h3>Thé Détox Premium</h3>
+                                <p>Nettoyage profond et revitalisation naturelle</p>
+                                <div class="slide-price">32 000 FCFA</div>
+                                <button class="btn-slide" onclick="addToCart('Thé Détox Premium', 32000)">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span>Ajouter au panier</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide" data-slide="2">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1580281657527-47bafc61e89d" alt="Produit Premium 3">
+                                <div class="slide-overlay">
+                                    <div class="slide-badge">Limited</div>
+                                </div>
+                            </div>
+                            <div class="slide-info">
+                                <h3>Appareil de Thérapie Avancé</h3>
+                                <p>Technologie de pointe pour votre bien-être quotidien</p>
+                                <div class="slide-price">180 000 FCFA</div>
+                                <button class="btn-slide" onclick="addToCart('Appareil Thérapie', 180000)">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span>Ajouter au panier</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slide" data-slide="3">
+                        <div class="slide-content">
+                            <div class="slide-image">
+                                <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6" alt="Produit Premium 4">
+                                <div class="slide-overlay">
+                                    <div class="slide-badge">Exclusif</div>
+                                </div>
+                            </div>
+                            <div class="slide-info">
+                                <h3>Complément Alimentaire Royal</h3>
+                                <p>Formule exclusive pour une santé optimale</p>
+                                <div class="slide-price">85 000 FCFA</div>
+                                <button class="btn-slide" onclick="addToCart('Complément Royal', 85000)">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <span>Ajouter au panier</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="slider-section" id="promo">
-<h2>Produits en Promotion</h2>
-<div class="slider">
-<div class="slide active"><img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"></div>
-<div class="slide"><img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289"></div>
-<div class="slide"><img src="https://images.unsplash.com/photo-1580281657527-47bafc61e89d"></div>
-<div class="slide"><img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6"></div>
-<div class="slide"><img src="https://images.unsplash.com/photo-1597764699519-3e63dcadab50"></div>
-<div class="slide"><img src="https://images.unsplash.com/photo-1580281658629-5b8b5a2e52d7"></div>
-</div>
-</section>
+    <!-- Shop Section Premium -->
+    <section class="shop-section" id="shop">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Collection Premium</h2>
+                <p class="section-subtitle">Soins naturels d'exception pour votre bien-être</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card-premium">
+                    <div class="product-badge">Nouveau</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1580281657527-47bafc61e89d" alt="Crème Premium">
+                        <div class="product-overlay">
+                            <button class="btn-quickview" onclick="quickView('Crème Premium', 45000, 'Formule anti-âge révolutionnaire')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Crème Premium Anti-Âge</h3>
+                        <p class="product-desc">Formule exclusive à base de plantes rares</p>
+                        <div class="product-price">
+                            <span class="price">45 000 FCFA</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart('Crème Premium', 45000)">
+                            <i class="fas fa-cart-plus"></i>
+                            <span>Ajouter au panier</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card-premium">
+                    <div class="product-badge hot">Best Seller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289" alt="Thé Premium">
+                        <div class="product-overlay">
+                            <button class="btn-quickview" onclick="quickView('Thé Premium', 32000, 'Détoxification naturelle')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Thé Détox Premium</h3>
+                        <p class="product-desc">Nettoyage profond et revitalisation</p>
+                        <div class="product-price">
+                            <span class="price">32 000 FCFA</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart('Thé Premium', 32000)">
+                            <i class="fas fa-cart-plus"></i>
+                            <span>Ajouter au panier</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card-premium">
+                    <div class="product-badge limited">Limited</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6" alt="Appareil Premium">
+                        <div class="product-overlay">
+                            <button class="btn-quickview" onclick="quickView('Appareil Premium', 180000, 'Technologie avancée')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Appareil de Thérapie</h3>
+                        <p class="product-desc">Technologie de pointe pour votre bien-être</p>
+                        <div class="product-price">
+                            <span class="price">180 000 FCFA</span>
+                        </div>
+                        <button class="btn-add-cart" onclick="addToCart('Appareil Premium', 180000)">
+                            <i class="fas fa-cart-plus"></i>
+                            <span>Ajouter au panier</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="shop">
-<h2>Nos Produits FOHOW</h2>
-<div class="products">
-<div class="product"><img src="https://images.unsplash.com/photo-1580281657527-47bafc61e89d" alt="Produit 1"><h4>Crème Beauté</h4><div class="price">35 000 FCFA</div><button onclick="addToCart('Crème Beauté',35000)">Ajouter au panier</button></div>
-<div class="product"><img src="https://images.unsplash.com/photo-1597764699519-3e63dcadab50" alt="Produit 2"><h4>Thé Détox</h4><div class="price">25 000 FCFA</div><button onclick="addToCart('Thé Détox',25000)">Ajouter au panier</button></div>
-<div class="product"><img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6" alt="Produit 3"><h4>Appareil Vitalité</h4><div class="price">120 000 FCFA</div><button onclick="addToCart('Appareil Vitalité',120000)">Ajouter au panier</button></div>
-</div>
-</section>
+    <!-- Business Section Premium -->
+    <section class="business-section" id="business">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Devenez Partenaire Premium</h2>
+                <p class="section-subtitle">Rejoignez notre réseau d'entrepreneurs prospères</p>
+            </div>
+            
+            <div class="business-packs">
+                <div class="pack-card bronze">
+                    <div class="pack-header">
+                        <h3>Bronze Pack</h3>
+                        <div class="pack-price">182 800 FCFA</div>
+                    </div>
+                    <div class="pack-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Pack découverte complet</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Formation initiale incluse</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Support personnalisé</span>
+                        </div>
+                    </div>
+                    <button class="btn-pack" onclick="addToCart('Bronze Pack', 182800)">
+                        <span>Choisir ce pack</span>
+                    </button>
+                </div>
+                
+                <div class="pack-card silver popular">
+                    <div class="pack-badge">Recommandé</div>
+                    <div class="pack-header">
+                        <h3>Silver Pack</h3>
+                        <div class="pack-price">493 600 FCFA</div>
+                    </div>
+                    <div class="pack-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Pack professionnel complet</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Formation avancée + certificat</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Site web professionnel</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Marketing kit premium</span>
+                        </div>
+                    </div>
+                    <button class="btn-pack" onclick="addToCart('Silver Pack', 493600)">
+                        <span>Choisir ce pack</span>
+                    </button>
+                </div>
+                
+                <div class="pack-card gold">
+                    <div class="pack-header">
+                        <h3>Gold Pack</h3>
+                        <div class="pack-price">1 026 100 FCFA</div>
+                    </div>
+                    <div class="pack-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Pack VIP ultime</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Masterclass exclusive</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Coach personnel dédié</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Événements VIP accès</span>
+                        </div>
+                    </div>
+                    <button class="btn-pack" onclick="addToCart('Gold Pack', 1026100)">
+                        <span>Choisir ce pack</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="business">
-<h2>Business Pack</h2>
-<p>Exemple de packs FOHOW pour partenaires – vous pouvez adapter les prix et descriptions ici.</p>
-<div class="products">
-<div class="product"><h4>Bronze Pack</h4><div class="price">182 800 FCFA</div><button onclick="addToCart('Bronze Pack',182800)">Ajouter au panier</button></div>
-<div class="product"><h4>Silver Pack</h4><div class="price">493 600 FCFA</div><button onclick="addToCart('Silver Pack',493600)">Ajouter au panier</button></div>
-<div class="product"><h4>Gold Pack</h4><div class="price">1 026 100 FCFA</div><button onclick="addToCart('Gold Pack',1026100)">Ajouter au panier</button></div>
-</div>
-</section>
+    <!-- Events Section Premium -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Événements & Formations</h2>
+                <p class="section-subtitle">Restez informé de nos prochains événements</p>
+            </div>
+            
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">Déc</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Atelier Détox Naturelle</h3>
+                        <p>Apprenez les secrets de la détoxification naturelle</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 14h00 - 17h00</span>
+                            <span><i class="fas fa-map-marker-alt"></i> N'Djamena</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">Déc</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Séminaire Business FOHOW</h3>
+                        <p>Devenez entrepreneur dans le domaine de la santé</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 09h00 - 18h00</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Hôtel Ledger</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="events">
-<h2>Évènements & Formations</h2>
-<p>Restez informé des événements et formations FOHOW. À adapter pour votre cabinet au Tchad.</p>
-</section>
+    <!-- Contact Section Premium -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contactez-nous</h2>
+                <p class="section-subtitle">Nous sommes là pour vous accompagner</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Téléphone</h4>
+                            <p>+235 95 98 30 25</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>biosantednf@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Adresse</h4>
+                            <p>N'Djamena, Tchad</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-actions">
+                    <a href="https://wa.me/23595983025" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="blog">
-<h2>Blog & Actualités</h2>
-<p>Articles, conseils santé et réussites clients FOHOW.</p>
-</section>
+    <!-- Footer Premium -->
+    <footer class="footer-premium">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-wrapper">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>FOHOW TCHAD</h3>
+                    <p>Santé naturelle premium au service de votre bien-être</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <a href="#accueil">Accueil</a>
+                    <a href="#shop">Boutique</a>
+                    <a href="#business">Business</a>
+                    <a href="#events">Événements</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>+235 95 98 30 25</p>
+                    <p>biosantednf@gmail.com</p>
+                    <p>N'Djamena, Tchad</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 FOHOW Tchad. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
 
-<section class="section" id="apropos">
-<h2>À propos de nous</h2>
-<p>Notre cabinet de soins au Tchad travaille avec les produits du FOHOW Groupe, combinant médecine traditionnelle chinoise, appareils thérapeutiques et expertise professionnelle pour améliorer votre santé et votre bien-être.</p>
-</section>
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Votre Panier</h3>
+                <button class="cart-close" id="cartClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">0 FCFA</span>
+                </div>
+                <button class="btn-checkout" onclick="orderWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Commander par WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
-<section class="section" id="contact">
-<h2>Contact</h2>
-<p>📞 +235 95 98 30 25</p>
-<p>📧 biosantednf@gmail.com</p>
-<p>📍 N'Djamena, Tchad</p>
-</section>
+    <!-- Quick View Modal -->
+    <div class="quickview-modal" id="quickviewModal">
+        <div class="quickview-content">
+            <button class="quickview-close" id="quickviewClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="quickview-body" id="quickviewBody">
+                <!-- Content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
 
-<div id="cart-box">
-<h3>Panier</h3>
-<div id="cart-items"></div>
-<div class="cart-total" id="cart-total">Total: 0 FCFA</div>
-<button class="cart-btn" onclick="orderWhatsApp()">Commander via WhatsApp</button>
-</div>
-
-<footer>© 2026 Santé pour tous-Tchad | FOHOW Groupe</footer>
-<a class="whatsapp" href="https://wa.me/23566815432" target="_blank">WhatsApp</a>
-
-<script>
-function toggleMenu(){document.getElementById("nav").classList.toggle("active");}
-function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
-
-/* PANIER */
-let cart=[];
-function addToCart(name,price){
-cart.push({name,price});
-updateCart();
-}
-function updateCart(){
-let itemsBox=document.getElementById("cart-items");
-itemsBox.innerHTML="";
-let total=0;
-cart.forEach(item=>{
-let div=document.createElement("div");
-div.className="cart-item";
-div.innerHTML=`${item.name} - ${item.price} FCFA <span style="cursor:pointer;color:red;" onclick="removeItem('${item.name}')">x</span>`;
-itemsBox.appendChild(div);
-total+=item.price;
-});
-document.getElementById("cart-total").innerText="Total: "+total+" FCFA";
-}
-function removeItem(name){
-cart=cart.filter(item=>item.name!==name);
-updateCart();
-}
-function orderWhatsApp(){
-if(cart.length==0){alert("Votre panier est vide !");return;}
-let message="Bonjour, je souhaite commander :\n"+cart.map(i=>i.name+" - "+i.price+" FCFA").join("\n");
-window.open("https://wa.me/23595983025?text="+encodeURIComponent(message));
-}
-
-/* SLIDER */
-let slides=document.querySelectorAll(".slide");
-let index=0;
-setInterval(()=>{slides[index].classList.remove("active");index=(index+1)%slides.length;slides[index].classList.add("active");},5000);
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
